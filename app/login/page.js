@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 "use client";
 
 import { useState } from "react";
@@ -68,17 +67,4 @@ export default function LoginPage() {
       </div>
     </div>
   );
-=======
-import React from 'react';
-
-export default function LoginPage() {
-	return (
-		<div className="min-h-screen flex items-center justify-center p-6">
-			<div className="w-full max-w-md bg-white p-8 rounded-2xl shadow">
-				<h1 className="text-2xl font-bold mb-4">Sign In</h1>
-				<p className="text-sm text-slate-600">Placeholder login page.</p>
-			</div>
-		</div>
-	);
->>>>>>> Stashed changes
 }

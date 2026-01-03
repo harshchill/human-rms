@@ -12,10 +12,8 @@ import {
 export default function Sidebar() {
   const menuItems = [
     { name: 'Dashboard', icon: <LayoutDashboard size={20} />, active: true },
-    { name: 'My Profile', icon: <UserCircle size={20} />, active: false },
-    { name: 'Leave', icon: <CalendarDays size={20} />, active: false },
-    { name: 'Payroll', icon: <Wallet size={20} />, active: false },
-    { name: 'Settings', icon: <Settings size={20} />, active: false },
+    { name: 'Attendance', icon: <UserCircle size={20} />, active: false },
+    { name: 'Time off', icon: <CalendarDays size={20} />, active: false },
   ];
 
   return (

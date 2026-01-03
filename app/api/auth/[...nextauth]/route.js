@@ -4,7 +4,7 @@ import dbConnect from "../../../../lib/connectDb";
 import User from "../../../../models/user";
 import bcrypt from "bcryptjs";
 
-const authOptions = {
+export const authOptions = {
   session: { strategy: "jwt" },
   providers: [
     CredentialsProvider({
@@ -37,9 +37,20 @@ const authOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
+      // On initial sign-in
       if (user) {
         token.id = user.id || token.id;
         token.role = user.role || token.role;
+      }
+      // Refresh role from DB on each token generation so changes reflect without re-login
+      if (token?.id) {
+        try {
+          await dbConnect();
+          const dbUser = await User.findById(token.id).select("role");
+          if (dbUser) token.role = dbUser.role;
+        } catch (e) {
+          // ignore transient errors
+        }
       }
       return token;
     },
