@@ -5,6 +5,7 @@ import LeaveBalance from './dashboard/LeaveBalance';
 import Attendance from './dashboard/Attendance';
 import LeaveHistory from './dashboard/LeaveHistory';
 import Quickaction from './dashboard/Quickaction';
+import AttendancePage from './Attendance/page';
 
 export default function DashboardPage() {
   return (
