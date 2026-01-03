@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 // UPDATED IMPORT: We now import from the SAME folder
-import AttendanceYearView from "../components/AttendanceYearView";
+import AttendanceYearView from "../components/Attendanceyearview";
 
 const generateMockData = (year) => {
   const data = [];
